@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Terra Survival Network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #2b5490;
+  color: white;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(15px);
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+}
+
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+}
+
+.nav-left img {
+  width: 35px;
+}
+
+.nav-right a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.nav-right a:hover {
+  color: #00ff88;
+}
+
+.discord-btn {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: linear-gradient(45deg, #00ff88, #0066ff);
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.hero img {
+  width: 160px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero p {
+  opacity: 0.85;
+  margin-top: 10px;
+}
+
+.ip-box {
+  margin: 20px auto;
+  display: inline-block;
+  padding: 10px 18px;
+  background: rgba(0,0,0,0.4);
+  border-radius: 20px;
+}
+
+/* SECTIONS */
+.section {
+  margin: 80px auto;
+  max-width: 900px;
+  padding: 40px;
+  border-radius: 25px;
+  background: rgba(0,0,0,0.35);
+  backdrop-filter: blur(20px);
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 20px;
+}
+
+.info-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.1);
+  text-align: center;
+}
+
+/* STATUS */
+.status-box {
+  padding: 25px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  background: rgba(0,0,0,0.4);
+}
+
+/* RULES */
+.rules {
+  list-style: none;
+}
+
+.rules li {
+  margin-bottom: 12px;
+  padding-left: 10px;
+  border-left: 3px solid #00ff88;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.6;
+}
+
+/* MOBILE VIEW */
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    z-index: 101;
+  }
+
+  .nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+
+  .nav-right.active {
+    display: flex;
+  }
+
+  .nav-right a {
+    margin: 8px 0;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero img {
+    width: 120px;
+  }
+
+  .ip-box {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+
+  .section {
+    padding: 25px 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .status-box {
+    font-size: 1rem;
+    padding: 18px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-left">
+    <img src="https://cdn.discordapp.com/attachments/1310675033533841510/1454425939411861585/20240609_105919.jpg?ex=69510b35&is=694fb9b5&hm=118c564e8609b8845fc49290bbf1254fedce79c3e39302a846c680fe8d91a364&">
+    <span>Terra Survival Network</span>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()">☰</button>
+  <div class="nav-right">
+    <a href="#about">About</a>
+    <a href="#status">Status</a>
+    <a href="#rules">Rules</a>
+    <a href="https://discord.gg/BdMUvCUm" target="_blank" class="discord-btn">Discord</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <img src="https://cdn.discordapp.com/attachments/1310675033533841510/1454425939411861585/20240609_105919.jpg?ex=69510b35&is=694fb9b5&hm=118c564e8609b8845fc49290bbf1254fedce79c3e39302a846c680fe8d91a364&">
+  <h1>Terra Survival Network</h1>
+  <p>A modern Minecraft Survival SMP</p>
+  <div class="ip-box">IP: <b>tsnsurvival.aternos.me</b></div>
+</section>
+
+<section id="about" class="section">
+  <h2>About the Server</h2>
+  <p>
+    Terra Survival Network is a friendly, community-based Minecraft SMP
+    focused on fair survival gameplay, creativity, and long-term worlds.
+  </p>
+
+  <div class="info-grid" style="margin-top:20px;">
+    <div class="info-card">🌍 Survival SMP</div>
+    <div class="info-card">⚙️ Fully supports 1.9+</div>
+    <div class="info-card">🛡️ No Griefing</div>
+    <div class="info-card">🤝 Friendly Community</div>
+  </div>
+</section>
+
+<section id="status" class="section">
+  <h2>Live Server Status</h2>
+  <div id="serverStatus" class="status-box">
+    Checking server status...
+  </div>
+</section>
+
+<section id="rules" class="section">
+  <h2>Server Rules</h2>
+  <ul class="rules">
+    <li>No griefing or stealing</li>
+    <li>No hacking, x-ray, or exploits</li>
+    <li>No killing pets (instant ban)</li>
+    <li>No harassment or discrimination</li>
+    <li>No NSFW builds or signs</li>
+    <li>Respect player property</li>
+    <li>No spawn killing without consent</li>
+    <li>Use common sense</li>
+  </ul>
+</section>
+
+<footer>
+  © 2025 Terra Survival Network
+</footer>
+
+<script>
+fetch("https://aternos.org/server/")
+  .then(res => res.json())
+  .then(data => {
+    const box = document.getElementById("serverStatus");
+    if (data.online) {
+      box.innerHTML = `
+        🟢 <b>ONLINE</b><br>
+        Players: ${data.players.online} / ${data.players.max}<br>
+        Version: ${data.version}
+      `;
+    } else {
+      box.innerHTML = "🔴 Server is OFFLINE";
+    }
+  })
+  .catch(() => {
+    document.getElementById("serverStatus").innerText =
+      "⚠️ Unable to fetch server status";
+  });
+
+function toggleMenu() {
+  document.querySelector('.nav-right').classList.toggle('active');
+}
+</script>
+
+</body>
+</html>

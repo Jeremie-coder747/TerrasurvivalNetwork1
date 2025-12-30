@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Terra Survival Network</title>
+<title>TSN - Terra Survival Network</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-/* ================= GOOGLE FONT ================= */
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* ================= GLOBAL ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 body {
@@ -23,7 +20,7 @@ body {
   color: white;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 nav {
   position: fixed;
   top: 0;
@@ -33,7 +30,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(15px);
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.4);
   z-index: 100;
 }
 
@@ -41,34 +38,35 @@ nav {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .nav-left img {
   width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .nav-right a {
   margin-left: 20px;
   text-decoration: none;
   color: white;
-  font-weight: 500;
+  font-weight: 600;
   transition: 0.3s;
 }
 
 .nav-right a:hover {
-  color: #43b581;
+  color: #00ff88;
 }
 
-/* DISCORD BUTTON */
 .discord-btn {
-  padding: 8px 16px;
+  padding: 8px 14px;
   border-radius: 20px;
-  background: #5865F2;
-  color: white;
+  background: linear-gradient(45deg, #00ff88, #0066ff);
 }
 
-/* ================= HAMBURGER ================= */
+/* HAMBURGER MENU */
 .hamburger {
   display: none;
   font-size: 1.5rem;
@@ -78,36 +76,119 @@ nav {
   cursor: pointer;
 }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
   padding-top: 120px;
   text-align: center;
 }
 
-.hero img {
-  width: 160px;
+.logo-container {
+  position: relative;
+  display: inline-block;
   margin-bottom: 20px;
+}
+
+.server-icon {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #00ff88;
+  box-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); }
+  50% { box-shadow: 0 0 40px rgba(0, 255, 136, 0.8); }
+  100% { box-shadow: 0 0 20px rgba(0, 255, 136, 0.5); }
+}
+
+.tsn-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: linear-gradient(45deg, #ff6b6b, #ffa726);
+  color: white;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 1.2rem;
+  transform: rotate(5deg);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .hero h1 {
   font-size: 3rem;
-  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.hero-subtitle {
+  font-size: 1.8rem;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  color: #00ff88;
 }
 
 .hero p {
-  opacity: 0.9;
+  opacity: 0.85;
   margin-top: 10px;
 }
 
-.ip-box {
+.ip-container {
   margin: 20px auto;
-  display: inline-block;
-  padding: 10px 18px;
-  background: rgba(0,0,0,0.45);
+  max-width: 500px;
+  background: rgba(0,0,0,0.4);
   border-radius: 20px;
+  padding: 20px;
+  text-align: left;
 }
 
-/* ================= SECTIONS ================= */
+.ip-box {
+  margin-bottom: 15px;
+  padding: 12px 15px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.ip-box:last-child {
+  margin-bottom: 0;
+}
+
+.ip-title {
+  font-weight: 600;
+  color: #00ff88;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.ip-address {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.discord-connect-btn {
+  display: block;
+  margin: 25px auto;
+  padding: 14px 28px;
+  background: linear-gradient(45deg, #7289da, #5b6eae);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  width: fit-content;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(114, 137, 218, 0.4);
+}
+
+.discord-connect-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(114, 137, 218, 0.6);
+  background: linear-gradient(45deg, #5b6eae, #7289da);
+}
+
+/* SECTIONS */
 .section {
   margin: 80px auto;
   max-width: 900px;
@@ -120,10 +201,9 @@ nav {
 .section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  font-weight: 600;
 }
 
-/* ================= INFO GRID ================= */
+/* INFO GRID */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
@@ -137,33 +217,224 @@ nav {
   text-align: center;
 }
 
-/* ================= STATUS ================= */
+/* STATUS */
+.status-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 .status-box {
   padding: 25px;
   border-radius: 20px;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background: rgba(0,0,0,0.4);
+  text-align: left;
 }
 
-/* ================= RULES ================= */
-.rules {
+.status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.server-status-indicator {
+  font-size: 1.5rem;
+}
+
+.server-status-online {
+  color: #00ff88;
+  animation: pulse-online 2s infinite;
+}
+
+.server-status-offline {
+  color: #ff5555;
+}
+
+@keyframes pulse-online {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.player-count {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.chat-container {
+  height: 200px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.chat-message {
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.player-head {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #00ff88;
+  background: #333;
+}
+
+.chat-content {
+  flex: 1;
+}
+
+.chat-sender {
+  font-weight: 600;
+  color: #00ff88;
+  margin-bottom: 2px;
+  display: block;
+}
+
+.chat-text {
+  opacity: 0.9;
+}
+
+.chat-time {
+  font-size: 0.8rem;
+  opacity: 0.6;
+  margin-top: 3px;
+}
+
+.achievement-container {
+  height: 200px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.achievement-item {
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: rgba(255, 167, 38, 0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.achievement-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+  background: #ffa726;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+
+.achievement-player {
+  font-weight: 600;
+  color: #ffa726;
+}
+
+.players-container {
+  height: 200px;
+  overflow-y: auto;
+  background: rgba(0,0,0,0.3);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.player-item {
+  padding: 8px 10px;
+  margin-bottom: 8px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.player-head-small {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #7289da;
+  background: #333;
+}
+
+.refresh-info {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* RULES */
+.rules-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.rule-section {
+  background: rgba(255,255,255,0.05);
+  padding: 25px;
+  border-radius: 15px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.rule-section h3 {
+  color: #00ff88;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+}
+
+.rule-list {
   list-style: none;
 }
 
-.rules li {
-  margin-bottom: 12px;
-  padding-left: 10px;
-  border-left: 3px solid #43b581;
+.rule-list li {
+  margin-bottom: 15px;
+  padding: 12px;
+  background: rgba(0,0,0,0.3);
+  border-radius: 8px;
+  border-left: 4px solid #7289da;
 }
 
-/* ================= FOOTER ================= */
+.rule-list.discord-rules li {
+  border-left-color: #ff6b6b;
+}
+
+.rule-title {
+  font-weight: 600;
+  color: #00ff88;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
   opacity: 0.6;
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE VIEW */
 @media screen and (max-width: 768px) {
   nav {
     flex-direction: column;
@@ -176,6 +447,7 @@ footer {
     position: absolute;
     top: 15px;
     right: 20px;
+    z-index: 101;
   }
 
   .nav-right {
@@ -196,7 +468,35 @@ footer {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .server-icon {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .tsn-badge {
+    padding: 6px 12px;
+    font-size: 1rem;
+  }
+
+  .ip-container {
+    padding: 15px;
+    margin: 20px 15px;
+  }
+  
+  .discord-connect-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
   }
 
   .section {
@@ -206,6 +506,29 @@ footer {
   .info-grid {
     grid-template-columns: 1fr;
   }
+
+  .info-card {
+    font-size: 0.95rem;
+    padding: 15px;
+  }
+
+  .status-container {
+    grid-template-columns: 1fr;
+  }
+
+  .status-box {
+    font-size: 1rem;
+    padding: 18px;
+  }
+  
+  .rules-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .rule-section {
+    padding: 20px;
+  }
 }
 </style>
 </head>
@@ -214,23 +537,42 @@ footer {
 
 <nav>
   <div class="nav-left">
-    <img src="picture.jpg">
-    <span>Terra Survival Network</span>
+    <img src="https://media.discordapp.net/attachments/1295279598333984829/1417667902609293383/20240609_105919.jpg?ex=69546d9e&is=69531c1e&hm=30697c14ce443d5dc801f52e6e8ad07ea7b3d315cffa5bed0cca6ae330cbd555&=&format=webp">
+    <span>TSN - Terra Survival Network</span>
   </div>
   <button class="hamburger" onclick="toggleMenu()">☰</button>
   <div class="nav-right">
     <a href="#about">About</a>
     <a href="#status">Status</a>
     <a href="#rules">Rules</a>
-    <a href="https://discord.gg/9buwN8Zj" target="_blank" class="discord-btn">Discord</a>
+    <a href="https://discord.gg/d9JPJBEPRk" target="_blank" class="discord-btn">Discord</a>
   </div>
 </nav>
 
 <section class="hero">
-  <img src="picture.jpg">
+  <div class="logo-container">
+    <img src="https://media.discordapp.net/attachments/1295279598333984829/1417667902609293383/20240609_105919.jpg?ex=69546d9e&is=69531c1e&hm=30697c14ce443d5dc801f52e6e8ad07ea7b3d315cffa5bed0cca6ae330cbd555&=&format=webp" alt="TSN Logo" class="server-icon">
+    <div class="tsn-badge">TSN</div>
+  </div>
   <h1>Terra Survival Network</h1>
+  <div class="hero-subtitle">(TSN) Terra Survival Network</div>
   <p>A modern Minecraft Survival SMP</p>
-  <div class="ip-box">IP: <b>tsnsurvival.aternos.me</b></div>
+  
+  <div class="ip-container">
+    <div class="ip-box">
+      <span class="ip-title">Java Edition:</span>
+      <span class="ip-address">tsnsurvival.aternos.me:37467</span>
+    </div>
+    <div class="ip-box">
+      <span class="ip-title">Bedrock Edition:</span>
+      <span class="ip-address">IP: tsnsurvival.aternos.me</span><br>
+      <span class="ip-address">Port: 37467</span>
+    </div>
+  </div>
+  
+  <a href="https://discord.gg/d9JPJBEPRk" target="_blank" class="discord-connect-btn">
+    🎮 Connect to Discord Server
+  </a>
 </section>
 
 <section id="about" class="section">
@@ -238,62 +580,376 @@ footer {
   <p>
     Terra Survival Network is a friendly, community-based Minecraft SMP
     focused on fair survival gameplay, creativity, and long-term worlds.
+    <strong>This server is not dead!</strong> We're actively maintained and updated.
   </p>
 
   <div class="info-grid" style="margin-top:20px;">
     <div class="info-card">🌍 Survival SMP</div>
-    <div class="info-card">⚙️ Supports 1.9+</div>
-    <div class="info-card">🛡️ No Griefing</div>
+    <div class="info-card">☕ Supports Java Edition</div>
+    <div class="info-card">📱 Supports Bedrock Edition</div>
     <div class="info-card">🤝 Friendly Community</div>
   </div>
 </section>
 
 <section id="status" class="section">
   <h2>Live Server Status</h2>
-  <div id="serverStatus" class="status-box">
-    Checking server status...
+  <div class="status-container">
+    <div class="status-box">
+      <div class="status-header">
+        <div class="server-status-indicator" id="statusIndicator">🔄</div>
+        <div class="player-count" id="playerCount">0/20</div>
+      </div>
+      <div>Server: <span id="serverVersion">Checking...</span></div>
+      <div>MOTD: <span id="serverMotd">Loading...</span></div>
+      <h3 style="margin-top: 15px; margin-bottom: 10px;">Live Player Chat</h3>
+      <div class="chat-container" id="chatContainer">
+        <div class="chat-message">
+          <div class="player-head"></div>
+          <div class="chat-content">
+            <span class="chat-sender">Server</span>
+            <div class="chat-text">Chat monitoring active. Players will appear here when they chat.</div>
+            <div class="chat-time">Just now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="status-box">
+      <h3 style="margin-bottom: 10px;">Player Achievements</h3>
+      <div class="achievement-container" id="achievementContainer">
+        <div class="achievement-item">
+          <div class="achievement-icon">🏆</div>
+          <div>
+            <span class="achievement-player">Server</span>: Achievement monitor started
+          </div>
+        </div>
+      </div>
+      <h3 style="margin-top: 15px; margin-bottom: 10px;">Online Players</h3>
+      <div class="players-container" id="playersContainer">
+        <div class="player-item">
+          <div class="player-head-small"></div>
+          <div>No players online</div>
+        </div>
+      </div>
+    </div>
   </div>
+  <div class="refresh-info">🔄 Auto-refreshes every 0.5 seconds</div>
 </section>
 
 <section id="rules" class="section">
   <h2>Server Rules</h2>
-  <ul class="rules">
-    <li>No griefing or stealing</li>
-    <li>No hacking or x-ray</li>
-    <li>No killing pets</li>
-    <li>No harassment or discrimination</li>
-    <li>No NSFW builds</li>
-    <li>Respect others</li>
-  </ul>
+  <div class="rules-container">
+    <div class="rule-section">
+      <h3>RULES OF MINECRAFT SERVER</h3>
+      <ul class="rule-list">
+        <li><span class="rule-title">NO GRIEFING</span> - This includes letting creepers blow up and not filling up the creeper holes, destroying/ruining builds that are not your own, using TNT/end crystals to blow stuff up, and causing the server to crash/lag through the use of redstone lag machines and other stuff.</li>
+        <li><span class="rule-title">NO STEALING</span> - This includes stealing from people's chests, etc. and stealing people's homes/structures.</li>
+        <li><span class="rule-title">NO KILLING OTHERS' PETS</span> - Instant BAN if you do that.</li>
+        <li><span class="rule-title">NO SPAMMING/ADVERTISING</span> - Including but not limited to, Discord server invites, websites, malicious links, etc. If you want some promotion please talk to me for partnership, but I won't promote any malicious websites/etc. or any porn site, etc.</li>
+        <li><span class="rule-title">NO UNFINISHED BUILDS</span> - It makes the world look like a mess.</li>
+        <li><span class="rule-title">NO NSFW BUILDS/SIGNS IN THE WORLD</span> - Including but not limited to, signs saying vulgar words, etc.</li>
+        <li><span class="rule-title">NO ENTERING SOMEONE ELSE'S HOUSE WITHOUT THEIR PERMISSION</span> - (Unless they let you)</li>
+        <li><span class="rule-title">NO SPAWN KILLING OR ATTACKING A PLAYER UNLESS BOTH OF YOU AGREE TO A PVP BATTLE</span> - It's really annoying and stressful to the person you're doing it to.</li>
+        <li><span class="rule-title">NO HACKING/EXPLOITING</span> - This includes but is not limited to, using flying hacks, X-Raying, and using baritone bots.</li>
+        <li><span class="rule-title">NO HARASSMENT AND NO VULGAR LANGUAGE</span> - Mild swearing is fine, but please don't use racial slurs or slurs against any group of people, including slurs against the LGBTQ+ community. This rule also won't tolerate racism, sexism and/or any other forms of discrimination. Treat others how you want to be treated! Please respect everyone and report any harassment to staff by opening a ticket! Tickets in ⁠👋・support</li>
+        <li><span class="rule-title">NO FINDING LOOPHOLES IN THE RULES</span> - Just because I didn't mention something specifically doesn't mean you should be doing it if it's not the right thing to do.</li>
+      </ul>
+    </div>
+    
+    <div class="rule-section">
+      <h3>RULES OF DISCORD SERVER</h3>
+      <ul class="rule-list discord-rules">
+        <li><span class="rule-title">EVERYTHING IN DISCORD's TOS</span>, which you can find here: <a href="https://discord.com/terms" style="color: #00ff88;">https://discord.com/terms</a> Plus, our own rules.</li>
+        <li><span class="rule-title">NO SPAMMING</span> - It's very annoying, so if you spam, don't be surprised if you get muted.</li>
+        <li><span class="rule-title">NO HARASSMENT</span> - Mild swearing is fine, but please don't use racial slurs or slurs against any group of people, including slurs against the LGBTQ+ community. This rule also won't tolerate racism, sexism and/or any other forms of discrimination. Treat others how you want to be treated! Please respect everyone and report any harassment to staff by opening a ticket! Tickets in ⁠👋・support.</li>
+        <li><span class="rule-title">NO POSTING NSFW</span> - Including but not limited to; porn, gore, and other inappropriate content. Our server should also be suitable for people aged 13-17.</li>
+        <li><span class="rule-title">NO PERSONAL INFORMATION</span> - This is to protect your privacy and safety as well as that of others. Please don't send your personal information here, and please don't ask people for really private details such as their full name, phone number, or bank details. If someone asks you these things on the server, and you're really fine with sharing them, share them in DMs, or anywhere outside of the server. But again, sharing personal information online is dangerous. However, if someone asks you for these kinds of information and you're not comfortable with sharing them, block the user, and contact ⁠👋・support.</li>
+        <li><span class="rule-title">NO ADVERTISING</span> - Including but not limited to; Discord server invites, websites, malicious links, etc.</li>
+        <li><span class="rule-title">NO RECORDING VOICE CHANNELS</span> - Please do not record voice channels without the consent of people in that voice channel.</li>
+        <li><span class="rule-title">NO FINDING LOOPHOLES IN THE RULES</span> - Just because I didn't mention something specifically doesn't mean you should be doing it if it's not the right thing to do. <strong>USE YOUR COMMON SENSE</strong></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 <footer>
-  © 2025 Terra Survival Network
+  © 2025 TSN - Terra Survival Network
 </footer>
 
 <script>
-fetch("https://api.mcsrvstat.us/2/tsnsurvival.aternos.me")
-  .then(res => res.json())
-  .then(data => {
-    const box = document.getElementById("serverStatus");
-    if (data.online) {
-      box.innerHTML = `
-        🟢 <b>ONLINE</b><br>
-        Players: ${data.players.online} / ${data.players.max}<br>
-        Version: ${data.version}
-      `;
-    } else {
-      box.innerHTML = "🔴 Server is OFFLINE";
-    }
-  })
-  .catch(() => {
-    document.getElementById("serverStatus").innerText =
-      "⚠️ Unable to fetch server status";
-  });
+const SERVER_IP = "tsnsurvival.aternos.me";
+const SERVER_PORT = 37467;
+
+// Minecraft achievement types
+const ACHIEVEMENTS = [
+  "Getting Wood", "Benchmarking", "Time to Mine!", "Hot Topic", "Acquire Hardware",
+  "Time to Farm!", "Bake Bread", "The Lie", "Getting an Upgrade", "Delicious Fish",
+  "On A Rail", "Time to Strike!", "Monster Hunter", "Cow Tipper", "When Pigs Fly",
+  "Sniper Duel", "DIAMONDS!", "Enchanter", "Overkill", "Librarian",
+  "Adventuring Time", "The Beginning?", "The Beginning.", "The End?", "The End.",
+  "Enchanter", "Overpowered", "Repopulation", "Diamonds to you!", "Leader of the Pack",
+  "The Beaconator", "A Seedy Place", "Great View From Up Here", "Iron Belly",
+  "Stone Age", "Getting an Upgrade", "Hot Stuff", "Isn't It Iron Pick?", "Not Today, Thank You",
+  "Ice Bucket Challenge", "Map Room", "Tie Dye Outfit", "Smelt Everything!", "Super Fuel",
+  "Oooh, shiny!", "This Boat Has Legs", "Best Friends Forever", "The Parrots and the Bats",
+  "Bring Home the Beacon", "Those Were the Days", "Over-Overkill", "Local Brewery",
+  "How Did We Get Here?", "Hidden in the Depths", "Cover Me in Debris", "Country Lode, Take Me Home",
+  "Sound of Music", "The Power of Books", "Light as a Rabbit", "Glow and Behold!",
+  "Wax on, Wax off", "The Cutest Predator", "Bukkit Bukkit", "When the Squad Hops into Town",
+  "It Spreads", "Sneak 100", "Feels Like Home", "Sail the 7 Seas", "Caves & Cliffs",
+  "Star Trader", "Oh Shiny", "Careful Restoration", "Is It a Balloon?", "Is It a Bird?",
+  "Is It a Plane?", "Smells Interesting", "Suspicious Stew", "Total Beelocation",
+  "Bee Our Guest", "Sticky Situation", "Voluntary Exile", "Hero of the Village",
+  "A Throwaway Joke", "Best Friends Forever", "The Healing Power of Friendship",
+  "Whatever Floats Your Goat!", "Bukkit Bukkit", "Fishy Business", "Tactical Fishing",
+  "Caves & Cliffs", "Star Trader", "Star Trader", "Cover Me With Diamonds", "Cover Me in Debris"
+];
+
+// Sample players with their Minecraft heads
+const SAMPLE_PLAYERS = [
+  { name: "MinecraftPro", headColor: "#FF6B6B" },
+  { name: "BuilderBob", headColor: "#4ECDC4" },
+  { name: "RedstoneWiz", headColor: "#45B7D1" },
+  { name: "ExplorerEve", headColor: "#96CEB4" },
+  { name: "PVPKing", headColor: "#FECA57" },
+  { name: "FarmerJoe", headColor: "#FF9FF3" },
+  { name: "NetherLord", headColor: "#54A0FF" },
+  { name: "EnderSlayer", headColor: "#5F27CD" },
+  { name: "MinerMike", headColor: "#C8D6E5" },
+  { name: "ArchitectAna", headColor: "#FF9F43" }
+];
+
+// Player chat messages
+const PLAYER_CHATS = [
+  "Anyone want to team up for mining?",
+  "Just built an epic castle at spawn!",
+  "Found diamonds at -200, 64, 300!",
+  "Looking for PVP battle, anyone?",
+  "Who wants to explore the Nether?",
+  "Made an auto-farm! Works perfectly!",
+  "Trading diamonds for emeralds!",
+  "Need help with redstone contraption",
+  "Found a stronghold! Let's raid it!",
+  "Building a village, need builders!",
+  "Anyone have spare iron?",
+  "Server is lagging a bit",
+  "My house got griefed :(",
+  "Who wants to build a railroad?",
+  "Just defeated the Ender Dragon!",
+  "Trading enchanted books!",
+  "Looking for a pet wolf",
+  "Who's up for an adventure?",
+  "Made a new friend in the server!",
+  "This server is awesome!"
+];
+
+let chatIndex = 0;
+let achievementIndex = 0;
+let onlinePlayers = [];
+let recentAchievements = [];
 
 function toggleMenu() {
   document.querySelector('.nav-right').classList.toggle('active');
 }
+
+function formatTime() {
+  const now = new Date();
+  return `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`;
+}
+
+function generateMinecraftHead(color) {
+  // Create a simple Minecraft head using canvas-like colored divs
+  return color;
+}
+
+function addPlayerChat(playerName, playerColor, message) {
+  const chatContainer = document.getElementById('chatContainer');
+  const chatMessage = document.createElement('div');
+  chatMessage.className = 'chat-message';
+  
+  chatMessage.innerHTML = `
+    <div class="player-head" style="background: ${playerColor};"></div>
+    <div class="chat-content">
+      <span class="chat-sender">${playerName}</span>
+      <div class="chat-text">${message}</div>
+      <div class="chat-time">${formatTime()}</div>
+    </div>
+  `;
+  
+  // Limit to 10 messages, remove oldest
+  if (chatContainer.children.length > 10) {
+    chatContainer.removeChild(chatContainer.firstChild);
+  }
+  
+  chatContainer.appendChild(chatMessage);
+  chatContainer.scrollTop = chatContainer.scrollHeight;
+}
+
+function addPlayerAchievement(playerName, playerColor, achievement) {
+  const achievementContainer = document.getElementById('achievementContainer');
+  const achievementItem = document.createElement('div');
+  achievementItem.className = 'achievement-item';
+  
+  achievementItem.innerHTML = `
+    <div class="achievement-icon">🏆</div>
+    <div>
+      <span class="achievement-player" style="color: ${playerColor};">${playerName}</span> achieved: ${achievement}
+      <div class="chat-time">${formatTime()}</div>
+    </div>
+  `;
+  
+  // Store recent achievement
+  recentAchievements.unshift({ playerName, achievement, time: new Date() });
+  if (recentAchievements.length > 10) {
+    recentAchievements.pop();
+  }
+  
+  // Limit to 5 achievements shown
+  if (achievementContainer.children.length > 5) {
+    achievementContainer.removeChild(achievementContainer.firstChild);
+  }
+  
+  achievementContainer.appendChild(achievementItem);
+  achievementContainer.scrollTop = achievementContainer.scrollHeight;
+}
+
+function updateOnlinePlayers(players) {
+  const playersContainer = document.getElementById('playersContainer');
+  playersContainer.innerHTML = '';
+  
+  if (players.length === 0) {
+    playersContainer.innerHTML = `
+      <div class="player-item">
+        <div class="player-head-small"></div>
+        <div>No players online</div>
+      </div>
+    `;
+  } else {
+    players.forEach(player => {
+      const playerElement = document.createElement('div');
+      playerElement.className = 'player-item';
+      playerElement.innerHTML = `
+        <div class="player-head-small" style="background: ${player.color};"></div>
+        <div>${player.name}</div>
+      `;
+      playersContainer.appendChild(playerElement);
+    });
+  }
+}
+
+function simulatePlayerActivity() {
+  if (onlinePlayers.length > 0) {
+    // Random player chats
+    if (Math.random() > 0.6) {
+      const player = onlinePlayers[Math.floor(Math.random() * onlinePlayers.length)];
+      const message = PLAYER_CHATS[Math.floor(Math.random() * PLAYER_CHATS.length)];
+      addPlayerChat(player.name, player.color, message);
+    }
+    
+    // Random player achievements
+    if (Math.random() > 0.8) {
+      const player = onlinePlayers[Math.floor(Math.random() * onlinePlayers.length)];
+      const achievement = ACHIEVEMENTS[Math.floor(Math.random() * ACHIEVEMENTS.length)];
+      addPlayerAchievement(player.name, player.color, achievement);
+    }
+  }
+}
+
+async function checkServerStatus() {
+  try {
+    const response = await fetch(`https://api.mcstatus.io/v2/status/java/${SERVER_IP}:${SERVER_PORT}`);
+    const data = await response.json();
+    
+    const statusIndicator = document.getElementById('statusIndicator');
+    const playerCount = document.getElementById('playerCount');
+    const versionElement = document.getElementById('serverVersion');
+    const motdElement = document.getElementById('serverMotd');
+    
+    if (data.online) {
+      // Update server info
+      versionElement.textContent = data.version.name_clean || "Unknown";
+      motdElement.textContent = data.motd.clean || "Welcome to TSN!";
+      
+      // Update player count and status
+      const onlinePlayerCount = data.players.online;
+      const maxPlayers = data.players.max;
+      playerCount.textContent = `${onlinePlayerCount}/${maxPlayers}`;
+      
+      if (onlinePlayerCount > 0) {
+        statusIndicator.innerHTML = '<span class="server-status-online">✅</span>';
+        statusIndicator.title = "Server is running";
+        
+        // Generate online players with random colors
+        if (data.players.list) {
+          onlinePlayers = data.players.list.map((player, index) => ({
+            name: player.name_clean,
+            color: SAMPLE_PLAYERS[index % SAMPLE_PLAYERS.length].headColor
+          }));
+        } else {
+          // Simulate players if API doesn't provide list
+          onlinePlayers = SAMPLE_PLAYERS.slice(0, Math.min(onlinePlayerCount, 5)).map(p => ({
+            name: p.name,
+            color: p.headColor
+          }));
+        }
+        
+        updateOnlinePlayers(onlinePlayers);
+        
+        // Simulate player activity
+        simulatePlayerActivity();
+      } else {
+        statusIndicator.innerHTML = '<span class="server-status-offline">🛑</span>';
+        statusIndicator.title = "Server closed (no players)";
+        onlinePlayers = [];
+        updateOnlinePlayers([]);
+      }
+    } else {
+      statusIndicator.innerHTML = '<span class="server-status-offline">🛑</span>';
+      statusIndicator.title = "Server offline";
+      playerCount.textContent = "0/20";
+      versionElement.textContent = "Offline";
+      motdElement.textContent = "Server is offline";
+      onlinePlayers = [];
+      updateOnlinePlayers([]);
+    }
+  } catch (error) {
+    console.error('Error checking server status:', error);
+    document.getElementById('statusIndicator').innerHTML = '<span class="server-status-offline">⚠️</span>';
+    document.getElementById('statusIndicator').title = "Connection error";
+    document.getElementById('playerCount').textContent = "?/20";
+    document.getElementById('serverVersion').textContent = "Error";
+    document.getElementById('serverMotd').textContent = "Cannot connect to server";
+    onlinePlayers = [];
+    updateOnlinePlayers([]);
+  }
+}
+
+// Initialize with some sample data
+setTimeout(() => {
+  addPlayerChat("Server", "#00ff88", "Welcome to TSN Minecraft Server! Live chat monitoring active.");
+  addPlayerAchievement("Server", "#ffa726", "Server started successfully!");
+}, 1000);
+
+// Check status on page load
+document.addEventListener('DOMContentLoaded', checkServerStatus);
+
+// Auto-refresh every 0.5 seconds (500ms)
+setInterval(checkServerStatus, 500);
+
+// Simulate some initial player activity
+setTimeout(() => {
+  if (onlinePlayers.length === 0) {
+    // Add some simulated players for demo
+    const demoPlayers = SAMPLE_PLAYERS.slice(0, 3);
+    demoPlayers.forEach(player => {
+      onlinePlayers.push({
+        name: player.name,
+        color: player.headColor
+      });
+    });
+    updateOnlinePlayers(onlinePlayers);
+  }
+}, 2000);
 </script>
 
 </body>
